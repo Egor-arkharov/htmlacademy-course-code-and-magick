@@ -52,7 +52,7 @@
 
   <h1 class="header-title section-title">
     Code&thinsp;and&thinsp;Magick
-    <img src="img/title-site.png" alt="Code and magick">
+    <img src="img/title-site.png" alt="Code and magick" tabindex="0">
   </h1>
   <p class="header-description">
     Это игра, где главного героя, которым вам предстоит управлять и изменять заклинаниями окружающий мир, зовут
@@ -71,7 +71,8 @@
   <form class="setup-wizard-form"
         method="post"
         enctype="multipart/form-data"
-        autocomplete="off">
+        autocomplete="off"
+        action="https://javascript.pages.academy/code-and-magick">
 
     <div class="setup-title">
       <div class="setup-user">
@@ -81,8 +82,7 @@
         </div>
         <label>
           <input type="text" name="username"
-                 maxlength="25" required
-                 class="setup-user-name" value="Синий Пендальф"/>
+                 class="setup-user-name" value="Синий Пендальф" minlength="2" maxlength="25" required/>
         </label>
       </div>
 
