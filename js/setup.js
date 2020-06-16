@@ -10,8 +10,8 @@ var setupOpen = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
 var setupNameInput = setup.querySelector('.setup-user-name');
-var wizardCoat = setup.querySelector('.setup-wizard .wizard-coat');
-var wizardEyes = setup.querySelector('.setup-wizard .wizard-eyes');
+var wizardCoat = setup.querySelector('.wizard-coat');
+var wizardEyes = setup.querySelector('.wizard-eyes');
 var wizardFirerball = setup.querySelector('.setup-fireball-wrap');
 var wizardCoatValue = setup.querySelector('input[name=coat-color]');
 var wizardEyesValue = setup.querySelector('input[name=eyes-color]');
@@ -19,6 +19,10 @@ var fireballValue = setup.querySelector('input[name=fireball-color]');
 
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
+
+var EvtKeys = {
+  ENTER: 'Enter'
+};
 
 var getRandomNum = function (max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -91,7 +95,7 @@ setupOpen.addEventListener('click', function () {
 });
 
 setupOpen.addEventListener('keydown', function (evt) {
-  if (evt.key === 'Enter') {
+  if (evt.key === EvtKeys.ENTER) {
     openPopup();
   }
 });
