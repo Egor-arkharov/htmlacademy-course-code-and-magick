@@ -21,7 +21,8 @@ var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
 var EvtKeys = {
-  ENTER: 'Enter'
+  ENTER: 'Enter',
+  ESCAPE: 'Escape'
 };
 
 var getRandomNum = function (max) {
@@ -72,7 +73,7 @@ var addFragment = function () {
 addFragment();
 
 var onPopupEscPress = function (evt) {
-  if (evt.key === 'Escape' && (setupNameInput !== document.activeElement)) {
+  if (evt.key === EvtKeys.ESCAPE && (setupNameInput !== document.activeElement)) {
     evt.preventDefault();
     closePopup();
   }
@@ -105,7 +106,7 @@ setupClose.addEventListener('click', function () {
 });
 
 setupClose.addEventListener('keydown', function (evt) {
-  if (evt.key === 'Enter') {
+  if (evt.key === EvtKeys.ENTER) {
     closePopup();
   }
 });
