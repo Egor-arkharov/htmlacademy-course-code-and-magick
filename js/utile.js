@@ -1,18 +1,21 @@
 'use strict';
 
-window.util = (function () {
-  var ESCAPE = 'Escape';
-  var ENTER = 'Enter';
+window.utile = (function () {
+
+  var EvtKeys = {
+    ENTER: 'Enter',
+    ESCAPE: 'Escape'
+  };
 
   return {
-    ESCAPE: 'Escape',
+    EvtKeys: EvtKeys,
     isEscEvent: function (evt, action) {
-      if (evt.key === ESCAPE) {
+      if (evt.key === EvtKeys.ESCAPE) {
         action();
       }
     },
     isEnterEvent: function (evt, action) {
-      if (evt.key === ENTER) {
+      if (evt.key === EvtKeys.ENTER) {
         action();
       }
     }

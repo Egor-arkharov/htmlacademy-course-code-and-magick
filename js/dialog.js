@@ -9,7 +9,7 @@
   var dialogHandle = setup.querySelector('.upload');
 
   var onPopupEscPress = function (evt) {
-    if (evt.key === window.util.ESCAPE && setupNameInput !== document.activeElement) {
+    if (evt.key === window.utile.EvtKeys.ESCAPE && setupNameInput !== document.activeElement) {
       evt.preventDefault();
       closePopup();
     }
@@ -31,13 +31,13 @@
   setupOpen.addEventListener('click', openPopup);
 
   setupOpen.addEventListener('keydown', function (evt) {
-    window.util.isEnterEvent(evt, openPopup);
+    window.utile.isEnterEvent(evt, openPopup);
   });
 
   setupClose.addEventListener('click', closePopup);
 
   setupClose.addEventListener('keydown', function (evt) {
-    window.util.isEnterEvent(evt, closePopup);
+    window.utile.isEnterEvent(evt, closePopup);
   });
 
   dialogHandle.addEventListener('mousedown', function (evt) {
