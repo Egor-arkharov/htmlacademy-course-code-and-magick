@@ -6,6 +6,7 @@
   var setup = document.querySelector('.setup');
   var setupClose = setup.querySelector('.setup-close');
   var setupNameInput = setup.querySelector('.setup-user-name');
+  var form = setup.querySelector('.setup-wizard-form');
   var dialogHandle = setup.querySelector('.upload');
 
   var onPopupEscPress = function (evt) {
@@ -39,6 +40,8 @@
   setupClose.addEventListener('keydown', function (evt) {
     window.utile.isEnterEvent(evt, closePopup);
   });
+
+  form.addEventListener('submit', closePopup);
 
   dialogHandle.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
@@ -89,5 +92,9 @@
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
+
+  window.dialog = {
+    closePopup: closePopup
+  };
 
 })();
