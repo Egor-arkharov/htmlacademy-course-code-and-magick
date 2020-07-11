@@ -7,6 +7,7 @@
   var setup = document.querySelector('.setup');
   var similarListElement = setup.querySelector('.setup-similar-list');
   var similarWizardTemplate = document.querySelector('#similar-wizard-template').content;
+  var form = setup.querySelector('.setup-wizard-form');
 
   var getRandomNum = function (max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -47,11 +48,12 @@
 
   window.backendLoad(successHandler, errorHandler);
 
-  var form = setup.querySelector('.setup-wizard-form');
+  var hideSetup = function () {
+    setup.classList.add('hidden');
+  };
+
   var submitHandler = function (evt) {
-    window.backendSave(new FormData(form), function () {
-      setup.classList.add('hidden');
-    });
+    window.backendSave(new FormData(form), hideSetup, errorHandler);
     evt.preventDefault();
   };
 
